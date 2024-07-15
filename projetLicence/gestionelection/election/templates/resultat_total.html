@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats Totaux</title>
+</head>
+<body>
+    <h1>Résultats Totaux des Votes</h1>
+
+    <table border="1">
+        <tr>
+            <th>Candidat</th>
+            <th>Bureau de Vote</th>
+            <th>Votes Totaux</th>
+            <th>Pourcentage</th>
+        </tr>
+        {% for resultat in resultats %}
+        <tr>
+            <td>{{ resultat.candidat__nom }} {{ resultat.candidat__prenom }}</td>
+            <td>{{ resultat.bureau__nom }}</td>
+            <td>{{ resultat.nombre_votes }}</td>
+            <td>{{ resultat.pourcentage }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Gagnant: {{ gagnant.candidat__nom }} {{ gagnant.candidat__prenom }} avec {{ gagnant.nombre_votes }} votes ({{ gagnant.pourcentage }}%)</h2>
+</body>
+</html>
