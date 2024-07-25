@@ -1,132 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'Accueil</title>
-    <style>
-        /* Styles de base */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #a89b9b;
-        }
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-        h1, h2, h3 {
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-        /* Styles de la barre de navigation */
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000; /* S'assurer que la barre de navigation est au-dessus des autres éléments */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 0; /* Ajuster le padding pour l'espacement */
-        }
-        .navbar a {
-            padding: 14px 20px;
-            display: flex; /* Utilisation de flex pour aligner l'image et le texte */
-            align-items: center;
-        }
-        .navbar .logo img {
-            height: 30px; /* Ajuster la hauteur de l'image */
-            margin-right: 10px; /* Espacement entre l'image et le texte */
-        }
-        .navbar .nav-links {
-            display: flex;
-            gap: 20px; /* Espacement entre les liens */
-            margin-right: 20px; /* Ajuster la marge droite */
-        }
-        /* Ajouter un espacement en haut pour éviter que le contenu soit caché sous la barre de navigation */
-        .spacer {
-            height: 60px; /* Ajuster la hauteur en fonction de la hauteur de la barre de navigation */
-        }
-        /* Styles de la bannière principale */
-        .banner {
-            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        .banner h1 {
-            font-size: 3em;
-        }
-        .banner p {
-            font-size: 1.2em;
-        }
-        /* Styles des sections d'information */
-        .section {
-            padding: 60px 0;
-            text-align: center;
-        }
-        .section h2 {
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-        .section p {
-            font-size: 1.1em;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .section.dark {
-            background-color: #333;
-            color: white;
-        }
-        /* Styles du pied de page */
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        /* Styles responsives */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .navbar .nav-links {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-            .banner {
-                height: 300px;
-            }
-            .banner h1 {
-                font-size: 2em;
-            }
-            .spacer {
-                height: 120px; /* Ajuster la hauteur pour les petits écrans si la barre de navigation est plus grande */
-            }
-        }
-    </style>
+    <title>welcome page</title>
+    <link rel="stylesheet" href="{% static 'css/accueil.css' %}">
 </head>
 <body>
     <!-- Barre de navigation -->
     <div class="navbar">
         <a href="#" class="logo">
-            <img src="./image/1460305.jpg" alt="Logo"> ELECAM
+            <img src="{% static './image/emblem.png' %}" alt="Logo"> ELECAM
         </a>
         <div class="nav-links">
             <a href="login/">se connecter</a>
@@ -142,7 +28,9 @@
     <div class="banner">
         <div class="container">
             <h1>Bienvenue sur le la plate forme d'élection du cameroun </h1>
-            <p>Découvrez nos services et ce que nous avons à offrir</p>
+           
+           
+            <p>connectez vous pour pouvoire decouvrir la liste des andidat et réaliser un vote</p>
         </div>
     </div>
 
@@ -150,7 +38,8 @@
     <div class="section" id="services">
         <div class="container">
             <h2>Nos Services</h2>
-            <p>Nous offrons une gamme de services pour répondre à vos besoins. Que vous ayez besoin de développement web, de marketing ou de consultation, nous avons ce qu'il vous faut.</p>
+            <a href="https://www.elecam.cm/?q=fr/actualit%C3%A9s/grands-titres">actualité</a> <br>
+            <a href="https://www.elecam.cm/?q=fr">blog</a>
         </div>
     </div>
 
@@ -159,6 +48,7 @@
         <div class="container">
             <h2>À propos de nous</h2>
             <p>Nous sommes une équipe de professionnels dévoués qui s'engagent à fournir les meilleures solutions pour nos clients. Notre objectif est de vous aider à réussir dans vos projets.</p>
+           
         </div>
     </div>
 
@@ -167,6 +57,11 @@
         <div class="container">
             <h2>Contactez-nous</h2>
             <p>Pour toute question ou demande de renseignements, n'hésitez pas à nous contacter. Nous sommes là pour vous aider !</p>
+            <p>B.P/PoBox Yaounde TEL/FAX: (237)222 21 25 52/222 21 25 39 <br>
+                EMAIL: <a href="elecam@gmail.cm">elecam@gmail.cm</a> <br>
+                <a href="https://www.elecam.cm/?q=fr/contact"> nous contacter</a>
+
+            </p>
         </div>
     </div>
 

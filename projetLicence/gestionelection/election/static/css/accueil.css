@@ -1,3 +1,115 @@
-body{
-    background-color: brown;
+/* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e7e6e6;
+    background-color: #464141;
+}
+a {
+    text-decoration: none;
+    color: #111011;
+}
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+/* Styles de la barre de navigation */
+.navbar {
+    background-color: #2057a8;
+    overflow: hidden;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* S'assurer que la barre de navigation est au-dessus des autres éléments */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0; /* Ajuster le padding pour l'espacement */
+}
+.navbar a {
+    padding: 14px 20px;
+    display: flex; /* Utilisation de flex pour aligner l'image et le texte */
+    align-items: center;
+}
+.navbar .logo img {
+    height: 30px; /* Ajuster la hauteur de l'image */
+    margin-right: 10px; /* Espacement entre l'image et le texte */
+}
+.navbar .nav-links {
+    display: flex;
+    gap: 20px; /* Espacement entre les liens */
+    margin-right: 20px; /* Ajuster la marge droite */
+}
+/* Ajouter un espacement en haut pour éviter que le contenu soit caché sous la barre de navigation */
+.spacer {
+    height: 60px; /* Ajuster la hauteur en fonction de la hauteur de la barre de navigation */
+}
+/* Styles de la bannière principale */
+.banner {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(17, 16, 16);
+    text-align: left;
+    position: relative;
+}
+.banner h1 {
+    font-size: 3em;
+}
+.banner p {
+    font-size: 1.2em;
+}
+/* Styles des sections d'information */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.section p {
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.section.dark {
+    background-color: #2057a8;;
+    color: white;
+}
+/* Styles du pied de page */
+.footer {
+    background-color: #2057a8;;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+/* Styles responsives */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .banner {
+        height: 300px;
+    }
+    .banner h1 {
+        font-size: 2em;
+    }
+    .spacer {
+        height: 120px; /* Ajuster la hauteur pour les petits écrans si la barre de navigation est plus grande */
+    }
 }

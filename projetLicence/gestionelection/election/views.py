@@ -51,8 +51,8 @@ def candidat_list(request ):
 
 
 def candidat_detail(request, id):
-    candidat = get_object_or_404(Candidat, pk=id)
     
+    candidat = get_object_or_404(Candidat, pk=id)
     return render(request, 'candidat_detail.html', {'candidat': candidat})
 
 
@@ -69,20 +69,23 @@ def vote(request,id):
             try:
                 bureau= electeur.trouver_bureau_vote()
                 if bureau:
+                    
                 
                     if electeur and check_password(pwd, electeur.mot_de_passe) and electeur.actif:
                         try:
-                            vote = Vote(electeur=electeur,   candidat=get_object_or_404(Candidat, pk=id), bureau=BureauDeVote.objects.get(pk=1))
+                            vote = Vote(electeur=electeur, candidat=get_object_or_404(Candidat, pk=id), bureau=BureauDeVote.objects.get(pk=1))
                             vote.save()
                         
                             electeur.actif = False
                             electeur.save()  # Mise à jour du champ actif
-                            return redirect('connexion')
+                            
+                            return redirect('home')
                         except Exception as error:
                            form.add_error(None,"vous essayez de voter un candidat qui n'existe plus ou pas")
-                    elif electeur.actif==False:
+                       
+                    elif electeur and check_password(pwd, electeur.mot_de_passe) and not electeur.actif:
                         form.add_error(None, 'vous etes desormais inactif par consequent vous ne pouvez plus voter ')  
-                        return redirect('connexion')
+                        
                     else: 
 
                         form.add_error(None, 'Code Électeur ou Mot de Passe incorrect')   
@@ -90,7 +93,7 @@ def vote(request,id):
             except Exception as error:
                 form.add_error(None, "vous n'appartenez a aucun bureau cela signifi que votre ville ou votre arrondissement n'a pas été correctement enregistré")
                 
-            
+              
     else:
         form = ElecteurLoginForm()
 
