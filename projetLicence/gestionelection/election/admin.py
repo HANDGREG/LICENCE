@@ -21,6 +21,12 @@ class bureau (admin.ModelAdmin):
 class vote (admin.ModelAdmin):
     list_display=('id_vote','electeur','candidat','bureau','date_vote')
 
+    """ def has_delete_permission(self, request, obj=None):
+        return False  # Empêche la suppression pour tous les objets
+
+    def has_change_permission(self, request, obj=None):
+        return False  # Empêche toute modification"""
+
 class resultat (admin.ModelAdmin):
     list_display=('id_resultat','bureau','candidat','nombre_votes','pourcentage')
 class totalvotes (admin.ModelAdmin):
